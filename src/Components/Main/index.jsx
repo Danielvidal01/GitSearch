@@ -18,7 +18,16 @@ export default (props)=>{
             Foto:response.data.avatar_url}])
     }
 
-    const mapear = Lista.map((p)=><Card Name={p.Name} key={p.Id} Foto={p.Foto} Bio={p.Bio}></Card>)
+    function Apagar(Nome){
+        const ind = Lista.findIndex((el)=>el.Name=== Nome)
+        const copiaLista = Array.from(Lista)
+        copiaLista.splice(ind,1)
+        setLista(copiaLista)
+
+    }
+
+
+    const mapear = Lista.map((p)=><Card Name={p.Name} key={p.Id} Foto={p.Foto} Bio={p.Bio} onClicar={Apagar}></Card>)
 
     return(
         <div className='Main'>

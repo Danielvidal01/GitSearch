@@ -7,6 +7,9 @@ export default (props)=>{
             <img src={props.Foto}width='80px' height='80px' alt='foto de perfil'/>
             <h3>{props.Name}</h3>
             <p>{props.Bio}</p>
+            <button onClick={()=>{
+                props.onClicar(props.Name)
+            }}>X</button>
         </div>
     )
 }

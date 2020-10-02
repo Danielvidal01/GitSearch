@@ -1,5 +1,8 @@
 .Header{
+    display: flex;
     box-sizing: content-box;
     background-color: rgb(121, 5, 121);
     height: 80px;
+    align-items: center;
+    justify-content: center;
 }

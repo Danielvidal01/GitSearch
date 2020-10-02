@@ -10,12 +10,18 @@ export default (props)=>{
 
     
     async function GerarPerfil(){
-        const response = await Api.get(Perfil)
+        try {
+            const response = await Api.get(Perfil)
         setLista([...Lista,{
             Id:response.data.id ,
             Name:Perfil,
             Bio:response.data.bio,
-            Foto:response.data.avatar_url}])
+            Foto:response.data.avatar_url,
+            Url:response.data.html_url,}])
+        } catch (error) {
+            console.warn(error)
+            alert(`o Perfil Não foi encontrado`)
+        }
     }
 
     function Apagar(Nome){
@@ -27,13 +33,12 @@ export default (props)=>{
     }
 
 
-    const mapear = Lista.map((p)=><Card Name={p.Name} key={p.Id} Foto={p.Foto} Bio={p.Bio} onClicar={Apagar}></Card>)
+    const mapear = Lista.map((p)=><Card Name={p.Name} key={p.Id} Foto={p.Foto} Bio={p.Bio} Link ={p.Url} onClicar={Apagar}></Card>)
 
     return(
         <div className='Main'>
-            <p>Gerador Perfis Git</p>
-            <input type='text'onChange={e=> setPerfil(e.target.value)}/>
-            <button onClick={GerarPerfil}>Gerar</button>
+            <input className='Inputers' type='text'onChange={e=> setPerfil(e.target.value)}/>
+            <button className="btn btn-secondary" onClick={GerarPerfil}>Gerar</button>
 
             <div className='Cards'>
             {mapear}

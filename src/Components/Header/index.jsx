@@ -6,7 +6,7 @@ import './styles.css';
 export default (props)=>{
     return(
         <div className='Header'>
-            <h1>Teste Header</h1>
+            <h1>Git Search</h1>
         </div>
     );
 }

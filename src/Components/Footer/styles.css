@@ -3,6 +3,10 @@
     color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start ;
     height: 120px;
+}
+.text{
+    font-size: 11px;
+    padding-left: 20px;
 }

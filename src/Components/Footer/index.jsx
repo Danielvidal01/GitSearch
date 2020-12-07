@@ -3,7 +3,8 @@ import './styles.css'
 export default (props)=>{
     return(
         <div className='Footer'>
-            <p>Teste Footer</p>
+            <p className='text'>
+created and optimized by Daniel Vidal</p>
         </div>
     );
 }

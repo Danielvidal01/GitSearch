@@ -87,7 +87,7 @@
   },
   "jest": {
     "roots": [
-      "<rootDir>/src"
+      "<rootDir>/build"
     ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",

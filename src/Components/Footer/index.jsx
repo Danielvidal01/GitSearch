@@ -4,7 +4,7 @@ export default (props)=>{
     return(
         <div className='Footer'>
             <p className='text'>
-created and optimized by Daniel Vidal</p>
+created by Daniel Vidal</p>
         </div>
     );
 }
